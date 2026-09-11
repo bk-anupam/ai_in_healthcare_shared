@@ -3,6 +3,7 @@
 **AI in Healthcare · Unit I · B.Tech AI, Third Year**  
 **Student lecture notes and primary study material**  
 **Companion practical:** [Lab 1 — Healthcare Data Ecosystem](../labs/lab-01-data-ecosystem.ipynb)
+**Companion lecture demonstration:** [ECG and EEG physiological signals](session-06-physiological-signals-demo.ipynb)
 
 ## Learning objectives
 
@@ -235,9 +236,15 @@ A recording needs **channel labels, sampling rates, units, and calibration infor
 | **Lead** | A defined electrical view, obtained from electrode potentials; commonly used in ECG terminology |
 | **Channel** | One recorded or stored signal stream |
 
+An **electrode** is like a small sensor sticker. A **lead** is the particular view made by comparing electrode measurements, much like choosing a direction from which to view an object. A **channel** is the resulting stream of numbers saved by the device and shown as one trace on screen. In ECG, the word *lead* is especially common; in EEG, a saved trace is often called a *channel*.
+
 A standard **12-lead ECG uses 10 electrodes**. A dataset storing all 12 lead waveforms has 12 ECG channels, but some leads are mathematically derived rather than independently measured. Electrode count and channel count therefore need not match.
 
+**Lead II** is one standard ECG view. It compares the right-arm electrode with the left-leg electrode, so it looks roughly along the usual upper-right-to-lower-left direction of the heart's electrical activity. It is often displayed because a typical heartbeat can form a clear P wave, QRS complex, and T wave in this view. Its amplitudes are commonly expressed in **millivolts (mV)**: one mV is one thousandth of a volt.
+
 In **EEG**, a channel records a voltage difference relative to a reference or between an electrode pair. For example, channels `Fp1 − F7` and `F7 − T3` share the F7 electrode. The arrangement of these comparisons is called a **montage**. Inspect channel labels and reference information to understand what each signal represents.
+
+For example, **`C3-A2`** means the signal at the `C3` scalp electrode is compared with `A2`, a reference electrode near the right ear/mastoid region. `C3` is a conventional name for a left-central scalp location in the international 10–20 EEG naming system. This is a voltage difference, not “brain activity at C3 alone.” The exact reference and montage must be checked in the recording metadata because conventions and labels can vary.
 
 A file may also include respiration or other signals, so its total channel count may exceed the number of ECG or EEG channels.
 
