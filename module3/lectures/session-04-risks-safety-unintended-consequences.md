@@ -189,6 +189,8 @@ For the inbox agent, the layers are:
 
 No single layer is enough. The model can be manipulated, code checks only cover cases someone thought of, and reviewers get tired. Layers should fail for *different* reasons, so that one layer's holes do not line up with the next.
 
+The same thinking applies to tools that are not agents. For an imaging tool, the layer before the model is often a **scope check**: fixed rules that stop images the model was never validated on (the wrong body part, view or age group, a poor-quality image, an unfamiliar machine) from receiving an AI output at all. Like the inbox safety screen, it cannot be talked out of its rules, but it only knows the cases someone wrote down. Unit IV Session 4 (§5.4) shows how such checks are built into a deployment.
+
 ## 10. Summary
 
 | Idea | Key point |
