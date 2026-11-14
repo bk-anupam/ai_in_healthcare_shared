@@ -182,14 +182,25 @@ Reason's **"Swiss cheese" model** (Reason, 2000) describes safety as a stack of 
 
 For the inbox agent, the layers are:
 
-1. **The model**: its instructions and training
-2. **Code checks**: patient-locked tools, proposal validation, the safety screen
-3. **The human reviewer**: approves or rejects each proposed action
-4. **Monitoring and reporting**: audit logs, incident reports, periodic re-evaluation
+| Layer | What it does | How it can fail (its holes) |
+|---|---|---|
+| 1. **The model** | Its instructions and training steer it towards safe actions | It can be manipulated by instructions hidden in a message (M033); it can claim something was done when it was not (M035); it can miss danger in unusual wording (M027) |
+| 2. **Code checks** | Patient-locked tools, proposal validation, the safety screen | They only cover cases someone thought of: the keyword screen misses wording it was not written for and raises false alarms; a rule that blocks *other* patients' appointments still lets a wrong action on *this* patient's appointment through (A03) |
+| 3. **The human reviewer** | Approves or rejects each proposed action | Reviewers get tired, and approving becomes routine when most proposals are correct (approval fatigue, Session 5); an error that looks like a normal work item gives them nothing to notice (M027) |
+| 4. **Monitoring and reporting** | Audit logs, incident reports, periodic re-evaluation | It acts only after harm has happened; it works only if someone reads the logs and has the authority to act; incidents that nobody recognises as AI errors are never reported |
 
-No single layer is enough. The model can be manipulated, code checks only cover cases someone thought of, and reviewers get tired. Layers should fail for *different* reasons, so that one layer's holes do not line up with the next.
+No single layer is enough. Layers should fail for *different* reasons, so that one layer's holes do not line up with the next.
 
-The same thinking applies to tools that are not agents. For an imaging tool, the layer before the model is often a **scope check**: fixed rules that stop images the model was never validated on (the wrong body part, view or age group, a poor-quality image, an unfamiliar machine) from receiving an AI output at all. Like the inbox safety screen, it cannot be talked out of its rules, but it only knows the cases someone wrote down. Unit IV Session 4 (§5.4) shows how such checks are built into a deployment.
+The same thinking applies to tools that are not agents. For an imaging tool, the layers are:
+
+| Layer | What it does | How it can fail (its holes) |
+|---|---|---|
+| 1. **Scope check** (before the model) | Fixed rules stop images the model was never validated on (the wrong body part, view or age group, a poor-quality image, an unfamiliar machine) from receiving an AI output at all | Like the inbox safety screen, it cannot be talked out of its rules, but it only knows the cases someone wrote down; a new machine or a case nobody anticipated passes through |
+| 2. **The model** | Detects the finding it was trained for; checked by **external validation** and a **silent trial** on this hospital's own images (Session 1), so its error rates here are known before anyone relies on it | **Shortcut learning** (§3): it may use the hospital, machine or markers instead of the disease, so it misses cases where the shortcut does not hold; **dataset shift** (§6): new patients, machines or practice change its error rates after validation |
+| 3. **The clinician's read** | A radiologist or clinician looks at the image and decides | Fatigue and workload; over-trust in the AI output (automation bias, Session 5) |
+| 4. **Monitoring and reporting** | Regular audits of missed cases and of the tool's outputs, with a named owner who can pause the tool | It sees problems only after they have affected patients; it fails if nobody reviews the audits or nobody has authority to pause the tool |
+
+The model is a layer with holes like any other. Validation measures how large its holes are at the time of testing, but it does not close them, and §3 showed that a good external result does not rule out a shortcut. Unit IV Session 3 covers validation in detail, and Unit IV Session 4 (§5.4) shows how scope checks are built into a deployment.
 
 ## 10. Summary
 
