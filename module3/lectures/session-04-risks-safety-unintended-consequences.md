@@ -140,7 +140,16 @@ Shift cannot be prevented, only **detected and managed**:
 2. make it easy for clinicians to report when the model disagrees with their judgement
 3. have a named group that can pause, retrain or retire the model
 
-Unit IV returns to monitoring in detail.
+**Where would the sepsis shift have shown up?** Follow the chain from data to patient. The table is reasoned from how the model works; Finlayson et al. report the spurious alerts, not these measurements.
+
+| What you watch | What it would have shown in spring 2020 | When |
+|---|---|---|
+| **Inputs** (vital signs, laboratory values) | Far more patients with fever, fast breathing, low oxygen and raised inflammation markers than in the development data | Within days |
+| **Outputs** (alerts) | The number of alerts per day rising well above its usual level | Within days |
+| **Use** (clinicians' responses) | More alerts dismissed as clinicians saw they did not fit the patient | Within days to weeks |
+| **Outcomes** (was the alert right?) | A falling share of alerted patients with confirmed bacterial sepsis (lower PPV) | Only after diagnoses were confirmed, weeks later |
+
+The pattern holds generally. Inputs and outputs need no confirmed diagnosis, so they warn first, but they only say that something has changed. Outcomes show whether the model is wrong, but late. A useful plan watches both. Unit IV Session 4 (§6.2–6.4) turns this into a monitoring plan, with a pause rule and an owner.
 
 ## 7. Unintended consequences in the workflow
 
