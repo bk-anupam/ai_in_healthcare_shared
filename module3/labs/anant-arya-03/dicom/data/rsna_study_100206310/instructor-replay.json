@@ -1,0 +1,74 @@
+{
+  "source": "Outputs embedded in the instructor notebook",
+  "instructor_run": "run-20261009T082446Z.json",
+  "records": {
+    "E0_Sagittal T2/STIR": {
+      "source": "normalized instructor output",
+      "response": "{\"modality\":\"MRI\",\"body_region\":\"Spine\",\"plane\":\"sagittal\"}"
+    },
+    "E0_Sagittal T1": {
+      "source": "normalized instructor output",
+      "response": "{\"modality\":\"MRI\",\"body_region\":\"spine\",\"plane\":\"sagittal\"}"
+    },
+    "E0_Axial T2": {
+      "source": "normalized instructor output",
+      "response": "{\"modality\":\"MRI\",\"body_region\":\"spine\",\"plane\":\"axial\"}"
+    },
+    "E1_naive_multiseries": {
+      "source": "embedded printed reply",
+      "response": "caution: this is an educational evaluation of an AI model on de-identified research images; it is not patient care.\n```json\n{\n\"spinal_canal_stenosis\": {\n\"L1/L2\": \"Normal/Mild\",\n\"L2/L3\": \"Normal/Mild\",\n\"L3/L4\": \"Moderate\",\n\"L4/L5\": \"Severe\",\n\"L5/S1\": \"Normal/Mild\"\n},\n\"left_neural_foraminal_narrowing\": {\n\"L1/L2\": \"Normal/Mild\",\n\"L2/L3\": \"Normal/Mild\",\n\"L3/L4\": \"Moderate\",\n\"L4/L5\": \"Severe\",\n\"L5/S1\": \"Normal/Mild\"\n},\n\"right_neural_foraminal_narrowing\": {\n\"L1/L2\": \"Normal/Mild\",\n\"L2/L3\": \"Normal/Mild\",\n\"L3/L4\": \"Moderate\",\n\"L4/L5\": \"Severe\",\n\"L5/S1\": \"Normal/Mild\"\n},\n\"left_subarticular_stenosis\": {\n\"L1/L2\": \"Cannot assess\",\n\"L2/L3\": \"Cannot assess\",\n\"L3/L4\": \"Moderate\",\n\"L4/L5\": \"Severe\",\n\"L5/S1\": \"Cannot assess\"\n},\n\"right_subarticular_stenosis\": {\n\"L1/L2\": \"Cannot assess\",\n\"L2/L3\": \"Cannot assess\",\n\"L3/L4\": \"Moderate\",\n\"L4/L5\": \"Severe\",\n\"L5/S1\": \"Cannot assess\"\n}\n}\n```"
+    },
+    "E2_canal": {
+      "source": "normalized instructor output",
+      "response": "{\"L1/L2\":\"Normal/Mild\",\"L2/L3\":\"Normal/Mild\",\"L3/L4\":\"Moderate\",\"L4/L5\":\"Severe\",\"L5/S1\":\"Severe\"}"
+    },
+    "E2_foramen_right": {
+      "source": "embedded printed reply excerpt",
+      "response": "```json\n{\"L1/L2\": \"Normal/Mild\", \"L2/L3\": \"Moderate\", \"L3/L4\": \"Severe\", \"L4/L5\": \"Severe\", \"L5/S1\": \"Severe\"}"
+    },
+    "E2_foramen_left": {
+      "source": "embedded printed reply excerpt",
+      "response": "{\"L1/L2\": \"Normal/Mild\", \"L2/L3\": \"Moderate\", \"L3/L4\": \"Severe\", \"L4/L5\": \"Severe\", \"L5/S1\": \"Severe\"}"
+    },
+    "E2_subarticular_L1/L2": {
+      "source": "embedded printed reply excerpt",
+      "response": "```json\n{\"left\": \"Normal/Mild\", \"right\": \"Normal/Mild\"}\n```"
+    },
+    "E2_subarticular_L2/L3": {
+      "source": "embedded printed reply excerpt",
+      "response": "```json\n{\"left\": \"Normal/Mild\", \"right\": \"Normal/Mild\"}\n```"
+    },
+    "E2_subarticular_L3/L4": {
+      "source": "embedded printed reply excerpt",
+      "response": "```json\n{\"left\": \"Moderate\", \"right\": \"Normal/Mild\"}\n```"
+    },
+    "E2_subarticular_L4/L5": {
+      "source": "embedded printed reply excerpt",
+      "response": "```json\n{\"left\": \"Moderate\", \"right\": \"Moderate\"}\n```"
+    },
+    "E2_subarticular_L5/S1": {
+      "source": "embedded printed reply excerpt",
+      "response": "```json\n{\"left\": \"Moderate\", \"right\": \"Normal/Mild\"}\n```"
+    },
+    "E3_repeat_canal_seed1": {
+      "source": "normalized instructor output",
+      "response": "{\"L1/L2\":\"Normal/Mild\",\"L2/L3\":\"Normal/Mild\",\"L3/L4\":\"Normal/Mild\",\"L4/L5\":\"Normal/Mild\",\"L5/S1\":\"Normal/Mild\"}"
+    },
+    "E3_repeat_canal_seed2": {
+      "source": "normalized instructor output",
+      "response": "{\"L1/L2\":\"Normal/Mild\",\"L2/L3\":\"Normal/Mild\",\"L3/L4\":\"Moderate\",\"L4/L5\":\"Moderate\",\"L5/S1\":\"Moderate\"}"
+    },
+    "E3_repeat_canal_seed3": {
+      "source": "normalized instructor output",
+      "response": "{\"L1/L2\":\"Normal/Mild\",\"L2/L3\":\"Normal/Mild\",\"L3/L4\":\"Moderate\",\"L4/L5\":\"Severe\",\"L5/S1\":\"Severe\"}"
+    },
+    "E3_blank_canal": {
+      "source": "embedded printed reply",
+      "response": "```json\n{\"L1/L2\": \"Normal/Mild\", \"L2/L3\": \"Moderate\", \"L3/L4\": \"Severe\", \"L4/L5\": \"Severe\", \"L5/S1\": \"Severe\"}\n```"
+    },
+    "E3_mirror_subarticular_L4/L5": {
+      "source": "normalized instructor output",
+      "response": "{\"left\":\"Moderate\",\"right\":\"Normal/Mild\"}"
+    }
+  }
+}
